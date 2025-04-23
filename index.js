@@ -9,12 +9,21 @@ const dateConvert = async () => {
   const output = moment(dateInput, "DD-MM-YYYY").format("DD/MM/YYYY");
   // validate using regex format
   const formatDate = /\d{2}-\d{2}-\d{4}/;
-  if (dateInput.match(formatDate)) {
-    console.log(output);
+  if (output === "Invalid date") {
+    rl.close()
+    throw new Error('Invalid date')
+  } else if (dateInput.match(formatDate)) {
     rl.close();
+    return output;
   }
-  else console.log('Format tanggal salah.');
 
-};
+  else throw new Error('Format tanggal salah.');
+}
 
-dateConvert();
+try {
+  const res = await dateConvert()
+  console.log(res)
+} catch (error) {
+  if (error.message === "Invalid date") console.log('Tanggal tidak valid.')
+  if (error.message === 'Invalid format') console.log('Format tanggal salah')
+}

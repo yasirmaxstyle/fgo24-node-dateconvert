@@ -1,0 +1,21 @@
+{
+  "name": "fgo24-node-dateconvert",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev" : "node --watch index.js"
+  },
+  "keywords": [
+    "date",
+    "format",
+    "convert"
+  ],
+  "author": "yasir",
+  "license": "ISC",
+  "description": "program untuk mengubah format tanggal",
+  "dependencies": {
+    "moment": "^2.30.1"
+  }
+}

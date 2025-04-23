@@ -17,7 +17,7 @@ const dateConvert = async () => {
     return output;
   }
 
-  else throw new Error('Format tanggal salah.');
+  else throw new Error('Invalid format');
 }
 
 try {
@@ -25,5 +25,5 @@ try {
   console.log(res)
 } catch (error) {
   if (error.message === "Invalid date") console.log('Tanggal tidak valid.')
-  if (error.message === 'Invalid format') console.log('Format tanggal salah')
+  if (error.message === 'Invalid format') console.log('Format tanggal salah.')
 }

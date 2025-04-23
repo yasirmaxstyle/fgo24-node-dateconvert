@@ -5,7 +5,7 @@ import { stdin as input, stdout as output } from 'node:process';
 const rl = readline.createInterface({ input, output });
 
 const dateConvert = async () => {
-  const dateInput = await rl.question('Masukkan tanggal dengan format (DD/MM/YYYY): ');
+  const dateInput = await rl.question('Masukkan tanggal dengan format (DD-MM-YYYY): ');
   const output = moment(dateInput, "DD-MM-YYYY").format("DD/MM/YYYY");
   // validate using regex format
   const formatDate = /\d{2}-\d{2}-\d{4}/;
